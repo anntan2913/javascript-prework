@@ -65,3 +65,12 @@ if( computerMove == 'nożyce' && playerMove == 'papier'){
 if( computerMove == 'nożyce' && playerMove == 'nożyce'){
   printMessage('Mamy remis!');
 }
+if( computerMove == 'kamień' && playerMove == 'nieznany ruch'){
+    printMessage('Spróbuj jeszcze raz, wybierz cyfrę od 1 do 3!');
+}
+if( computerMove == 'nożyce' && playerMove == 'nieznany ruch'){
+    printMessage('Spróbuj jeszcze raz, wybierz cyfrę od 1 do 3!');
+}
+if( computerMove == 'papier' && playerMove == 'nieznany ruch'){
+    printMessage('Spróbuj jeszcze raz, wybierz cyfrę od 1 do 3!');
+}
