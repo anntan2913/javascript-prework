@@ -8,13 +8,9 @@ if(randomNumber == 1){
   computerMove = 'kamień';
 }
 
-printMessage('Mój ruch to: ' + computerMove);
-
 if(randomNumber == 2){
   computerMove = 'papier';
 }
-
-printMessage('Mój ruch to: ' + computerMove);
 
 if(randomNumber == 3){
   computerMove = 'nożyce';
