@@ -31,31 +31,36 @@ if(playerInput == 1){
 
 printMessage('Twój ruch to: ' + playerMove);
 
-if( computerMove == 'kamień' && playerMove == 'papier'){
-  printMessage('Ty wygrywasz!');
-  } else if( computerMove == 'kamień' && playerMove == 'nożyce'){
-  printMessage('Ty przegrywasz!');
-  } else if( computerMove == 'kamień' && playerMove == 'kamień'){
-  printMessage('Mamy remis!');
-} else 
-  if( computerMove == 'papier' && playerMove == 'papier'){
-  printMessage('Mamy remis!');
-  } else if( computerMove == 'papier' && playerMove == 'nożyce'){
-  printMessage('Ty wygrywasz!');
-  } else if( computerMove == 'papier' && playerMove == 'kamień'){
-  printMessage('Ty przegrywasz!');
- } else 
-if( computerMove == 'nożyce' && playerMove == 'kamień'){
-  printMessage('Ty wygrywasz!');
-  } else if( computerMove == 'nożyce' && playerMove == 'papier'){
-  printMessage('Ty przegrywasz!');
-  } else if( computerMove == 'nożyce' && playerMove == 'nożyce'){
-  printMessage('Mamy remis!');
-  } else 
- if( computerMove == 'kamień' && playerMove == 'nieznany ruch'){
-  printMessage('Spróbuj jeszcze raz, wybierz cyfrę od 1 do 3!');
-  } else if( computerMove == 'nożyce' && playerMove == 'nieznany ruch'){
-  printMessage('Spróbuj jeszcze raz, wybierz cyfrę od 1 do 3!');
-  } else if( computerMove == 'papier' && playerMove == 'nieznany ruch'){
-  printMessage('Spróbuj jeszcze raz, wybierz cyfrę od 1 do 3!');
-  }
+if (computerMove == 'kamień') {
+    if (playerMove == 'papier') {
+        printMessage('Ty wygrywasz!');
+    } else if (playerMove == 'nożyce') {
+        printMessage('Ty przegrywasz!');
+    } else if (playerMove == 'kamień') {
+        printMessage('Mamy remis!');
+    } else if (playerMove == 'nieznany ruch') {
+        printMessage('Spróbuj jeszcze raz, wybierz cyfrę od 1 do 3!');
+    }
+}  
+if (computerMove == 'papier') {
+    if (playerMove == 'papier') {
+        printMessage('Mamy remis!');
+    } else if (playerMove == 'nożyce') {
+        printMessage('Ty wygrywasz!');
+    } else if (playerMove == 'kamień') {
+        printMessage('Ty przegrywasz!');
+    } else if (playerMove == 'nieznany ruch') {
+        printMessage('Spróbuj jeszcze raz, wybierz cyfrę od 1 do 3!');
+    }
+}
+if (computerMove == 'nożyce') {
+    if (playerMove == 'kamień') {
+        printMessage('Ty wygrywasz!');
+    } else if (playerMove == 'papier') {
+        printMessage('Ty przegrywasz!');
+    } else if (playerMove == 'nożyce') {
+        printMessage('Mamy remis!');
+    } else if (playerMove == 'nieznany ruch') {
+        printMessage('Spróbuj jeszcze raz, wybierz cyfrę od 1 do 3!');
+    }
+}
