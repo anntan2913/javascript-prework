@@ -1,7 +1,7 @@
-function playGame(playerInput) {
+const playGame = function(playerInput) {    //czy dodatkowe {} o których mowa w zadaniu, jeszcze są wymagane; te obejmuja cały, czy jednak nie?
     clearMessages();
 
-    function getMoveName(argMoveId) {
+    let getMoveName = function(argMoveId) {     //uznaję ze w 1 cyklu gry, który tu mamy wartśc się zmienia: dla comp i dla player, stąd pomysł funkcji w let
         if (argMoveId == 1) {
             return 'kamień';
         } else if (argMoveId == 2) {
@@ -12,43 +12,20 @@ function playGame(playerInput) {
             printMessage('Nie znam ruchu o id ' + argMoveId + '.');
             return 'nieznany ruch';
         }
-    }
+    };
 
-    let randomNumber = Math.floor(Math.random() * 3 + 1);
-
+    const randomNumber = Math.floor(Math.random() * 3 + 1);     //w ciągu gry raz losowana przez comp
     console.log('Wylosowana liczba to: ' + randomNumber);
 
-    let computerMove = getMoveName(randomNumber);
-    /*
-    if(randomNumber == 1){
-      computerMove = 'kamień';
-    } else if(randomNumber == 2){
-      computerMove = 'papier';
-    } else if(randomNumber == 3){
-      computerMove = 'nożyce';
-    }
-    */
+    const computerMove = getMoveName(randomNumber);     // const bo w każdej grze i dla comp i dla player Move tylko po 1 wart
     printMessage('Mój ruch to: ' + computerMove);
-
-    /*let playerInput = prompt('Wybierz swój ruch! 1: kamień, 2: papier, 3: nożyce.');
-
-    console.log('Gracz wpisał: ' + playerInput); */
-
-    let playerMove = getMoveName(playerInput);
-    /*
-    if(playerInput == 1){
-      playerMove = 'kamień';
-    } else if(playerInput == 2){
-      playerMove = 'papier';
-    } else if(playerInput == 3){
-      playerMove = 'nożyce';
-    }
-    */
+    
+    const playerMove = getMoveName(playerInput);    
     printMessage('Twój ruch to: ' + playerMove);
-    console.log('Twójr ruch to')
 
-    function displayResult(argComputerMove, argPlayerMove) {
+    console.log('Twój ruch to')
 
+    const displayResult = function(argComputerMove, argPlayerMove) {        //funkcja nazwana zam na anonimowa zapisana w stałej
 
         if (argComputerMove == 'kamień') {
             if (argPlayerMove == 'papier') {
@@ -83,19 +60,18 @@ function playGame(playerInput) {
                 printMessage('Spróbuj jeszcze raz, wybierz cyfrę od 1 do 3!');
             }
         }
-    }
+    };
     displayResult(computerMove, playerMove);
 
-}
-    document.getElementById('play-rock').addEventListener('click', function(){
-        playGame(1);
-      });
-    
-    document.getElementById('play-paper').addEventListener('click', function(){
-        playGame(2);
-      });
+};
+document.getElementById('play-rock').addEventListener('click', function () {
+    playGame(1);
+});
 
-    document.getElementById('play-scissors').addEventListener('click', function(){
-        playGame(3);
-      });  
-    
+document.getElementById('play-paper').addEventListener('click', function () {
+    playGame(2);
+});
+
+document.getElementById('play-scissors').addEventListener('click', function () {
+    playGame(3);
+});
